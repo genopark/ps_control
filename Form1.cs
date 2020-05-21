@@ -74,12 +74,12 @@ namespace ps_control
 
         private void btn_ps1setvolt_Click(object sender, EventArgs e)
         {
-            m_ps1.setVoltage(Convert.ToDouble(tb_ps1volt.Text));
+            m_ps1.setVolt(Convert.ToDouble(tb_ps1volt.Text));
         }
 
         private void btn_ps1setcurr_Click(object sender, EventArgs e)
         {
-            m_ps1.setCurrentLimit(Convert.ToDouble(tb_ps1curr.Text));
+            m_ps1.setCurrLimit(Convert.ToDouble(tb_ps1curr.Text));
         }
 
         private void btn_ps2on_Click(object sender, EventArgs e)
@@ -99,12 +99,12 @@ namespace ps_control
 
         private void btn_ps2setvolt_Click(object sender, EventArgs e)
         {
-            m_ps2.setVoltage(Convert.ToDouble(tb_ps2volt.Text));
+            m_ps2.setVolt(Convert.ToDouble(tb_ps2volt.Text));
         }
 
         private void btn_ps2setcurr_Click(object sender, EventArgs e)
         {
-            m_ps2.setCurrentLimit(Convert.ToDouble(tb_ps2curr.Text));
+            m_ps2.setCurrLimit(Convert.ToDouble(tb_ps2curr.Text));
         }
 
         private void btn_ps1connect_Click(object sender, EventArgs e)
