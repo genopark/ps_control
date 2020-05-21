@@ -1,0 +1,10 @@
+C:\genopark\csharp_projects\ps_control\bin\Debug\ps_control.exe.config
+C:\genopark\csharp_projects\ps_control\bin\Debug\ps_control.exe
+C:\genopark\csharp_projects\ps_control\bin\Debug\ps_control.pdb
+C:\genopark\csharp_projects\ps_control\obj\Debug\ps_control.csprojAssemblyReference.cache
+C:\genopark\csharp_projects\ps_control\obj\Debug\ps_control.Form1.resources
+C:\genopark\csharp_projects\ps_control\obj\Debug\ps_control.Properties.Resources.resources
+C:\genopark\csharp_projects\ps_control\obj\Debug\ps_control.csproj.GenerateResource.cache
+C:\genopark\csharp_projects\ps_control\obj\Debug\ps_control.csproj.CoreCompileInputs.cache
+C:\genopark\csharp_projects\ps_control\obj\Debug\ps_control.exe
+C:\genopark\csharp_projects\ps_control\obj\Debug\ps_control.pdb
