@@ -44,6 +44,7 @@ namespace ps_control
             m_ps2.connectInst();
         }
 
+        // update labels, current voltage and current
         public void timerInstreadTick(object sender, EventArgs e)
         {
             //PS1
@@ -119,5 +120,34 @@ namespace ps_control
 
         #endregion
 
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void btn_cut_Click(object sender, EventArgs e)
+        {
+            TextBox txtBox = this.ActiveControl as TextBox;
+            if (txtBox != null && txtBox.SelectedText != string.Empty)
+            {
+                Clipboard.SetData(DataFormats.Text, txtBox.SelectedText);
+                txtBox.SelectedText = string.Empty;
+            }
+        }
+
+        private void btn_copy_Click(object sender, EventArgs e)
+        {
+            TextBox txtBox = this.ActiveControl as TextBox;
+            if (txtBox != null && txtBox.SelectedText != string.Empty)
+            {
+                Clipboard.SetData(DataFormats.Text, txtBox.SelectedText);
+            }
+        }
+
+        private void btn_paste_Click(object sender, EventArgs e)
+        {
+            int position = ((TextBox)this.ActiveControl).SelectionStart;
+            this.ActiveControl.Text = this.ActiveControl.Text.Insert(position, Clipboard.GetText());
+        }
     }
 }

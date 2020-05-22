@@ -32,10 +32,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_cut = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_copy = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_paste = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_exit = new System.Windows.Forms.ToolStripMenuItem();
+            this.connectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_ps1connect = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_ps2connect = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_help = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -73,9 +76,6 @@
             this.lbl_ps1curr = new System.Windows.Forms.Label();
             this.lbl_ps1volt = new System.Windows.Forms.Label();
             this.timer_instread = new System.Windows.Forms.Timer(this.components);
-            this.connectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btn_ps1connect = new System.Windows.Forms.ToolStripMenuItem();
-            this.btn_ps2connect = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -100,37 +100,64 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cutToolStripMenuItem,
-            this.copyToolStripMenuItem,
-            this.pasteToolStripMenuItem,
-            this.exitToolStripMenuItem});
+            this.btn_cut,
+            this.btn_copy,
+            this.btn_paste,
+            this.btn_exit});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // cutToolStripMenuItem
+            // btn_cut
             // 
-            this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.cutToolStripMenuItem.Text = "Cut";
+            this.btn_cut.Name = "btn_cut";
+            this.btn_cut.Size = new System.Drawing.Size(180, 22);
+            this.btn_cut.Text = "Cut";
+            this.btn_cut.Click += new System.EventHandler(this.btn_cut_Click);
             // 
-            // copyToolStripMenuItem
+            // btn_copy
             // 
-            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.copyToolStripMenuItem.Text = "Copy";
+            this.btn_copy.Name = "btn_copy";
+            this.btn_copy.Size = new System.Drawing.Size(180, 22);
+            this.btn_copy.Text = "Copy";
+            this.btn_copy.Click += new System.EventHandler(this.btn_copy_Click);
             // 
-            // pasteToolStripMenuItem
+            // btn_paste
             // 
-            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.pasteToolStripMenuItem.Text = "Paste";
+            this.btn_paste.Name = "btn_paste";
+            this.btn_paste.Size = new System.Drawing.Size(180, 22);
+            this.btn_paste.Text = "Paste";
+            this.btn_paste.Click += new System.EventHandler(this.btn_paste_Click);
             // 
-            // exitToolStripMenuItem
+            // btn_exit
             // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
+            this.btn_exit.Name = "btn_exit";
+            this.btn_exit.Size = new System.Drawing.Size(180, 22);
+            this.btn_exit.Text = "Exit";
+            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
+            // 
+            // connectToolStripMenuItem
+            // 
+            this.connectToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btn_ps1connect,
+            this.btn_ps2connect});
+            this.connectToolStripMenuItem.Name = "connectToolStripMenuItem";
+            this.connectToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.connectToolStripMenuItem.Text = "Connect";
+            // 
+            // btn_ps1connect
+            // 
+            this.btn_ps1connect.Name = "btn_ps1connect";
+            this.btn_ps1connect.Size = new System.Drawing.Size(180, 22);
+            this.btn_ps1connect.Text = "PS1";
+            this.btn_ps1connect.Click += new System.EventHandler(this.btn_ps1connect_Click);
+            // 
+            // btn_ps2connect
+            // 
+            this.btn_ps2connect.Name = "btn_ps2connect";
+            this.btn_ps2connect.Size = new System.Drawing.Size(180, 22);
+            this.btn_ps2connect.Text = "PS2";
+            this.btn_ps2connect.Click += new System.EventHandler(this.btn_ps2connect_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -142,6 +169,7 @@
             // 
             // btn_help
             // 
+            this.btn_help.Enabled = false;
             this.btn_help.Name = "btn_help";
             this.btn_help.Size = new System.Drawing.Size(180, 22);
             this.btn_help.Text = "Help";
@@ -550,29 +578,6 @@
             this.lbl_ps1volt.Text = "V";
             this.lbl_ps1volt.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // connectToolStripMenuItem
-            // 
-            this.connectToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btn_ps1connect,
-            this.btn_ps2connect});
-            this.connectToolStripMenuItem.Name = "connectToolStripMenuItem";
-            this.connectToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-            this.connectToolStripMenuItem.Text = "Connect";
-            // 
-            // btn_ps1connect
-            // 
-            this.btn_ps1connect.Name = "btn_ps1connect";
-            this.btn_ps1connect.Size = new System.Drawing.Size(180, 22);
-            this.btn_ps1connect.Text = "PS1";
-            this.btn_ps1connect.Click += new System.EventHandler(this.btn_ps1connect_Click);
-            // 
-            // btn_ps2connect
-            // 
-            this.btn_ps2connect.Name = "btn_ps2connect";
-            this.btn_ps2connect.Size = new System.Drawing.Size(180, 22);
-            this.btn_ps2connect.Text = "PS2";
-            this.btn_ps2connect.Click += new System.EventHandler(this.btn_ps2connect_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -605,10 +610,10 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btn_cut;
+        private System.Windows.Forms.ToolStripMenuItem btn_copy;
+        private System.Windows.Forms.ToolStripMenuItem btn_paste;
+        private System.Windows.Forms.ToolStripMenuItem btn_exit;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem btn_help;
         private System.Windows.Forms.StatusStrip statusStrip1;
