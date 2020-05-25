@@ -8,3 +8,4 @@ C:\genopark\csharp_projects\ps_control\obj\Debug\ps_control.csproj.GenerateResou
 C:\genopark\csharp_projects\ps_control\obj\Debug\ps_control.csproj.CoreCompileInputs.cache
 C:\genopark\csharp_projects\ps_control\obj\Debug\ps_control.exe
 C:\genopark\csharp_projects\ps_control\obj\Debug\ps_control.pdb
+C:\genopark\csharp_projects\ps_control\obj\Debug\ps_control.about_form.resources

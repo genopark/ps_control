@@ -111,28 +111,28 @@
             // btn_cut
             // 
             this.btn_cut.Name = "btn_cut";
-            this.btn_cut.Size = new System.Drawing.Size(180, 22);
+            this.btn_cut.Size = new System.Drawing.Size(102, 22);
             this.btn_cut.Text = "Cut";
             this.btn_cut.Click += new System.EventHandler(this.btn_cut_Click);
             // 
             // btn_copy
             // 
             this.btn_copy.Name = "btn_copy";
-            this.btn_copy.Size = new System.Drawing.Size(180, 22);
+            this.btn_copy.Size = new System.Drawing.Size(102, 22);
             this.btn_copy.Text = "Copy";
             this.btn_copy.Click += new System.EventHandler(this.btn_copy_Click);
             // 
             // btn_paste
             // 
             this.btn_paste.Name = "btn_paste";
-            this.btn_paste.Size = new System.Drawing.Size(180, 22);
+            this.btn_paste.Size = new System.Drawing.Size(102, 22);
             this.btn_paste.Text = "Paste";
             this.btn_paste.Click += new System.EventHandler(this.btn_paste_Click);
             // 
             // btn_exit
             // 
             this.btn_exit.Name = "btn_exit";
-            this.btn_exit.Size = new System.Drawing.Size(180, 22);
+            this.btn_exit.Size = new System.Drawing.Size(102, 22);
             this.btn_exit.Text = "Exit";
             this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
@@ -148,14 +148,14 @@
             // btn_ps1connect
             // 
             this.btn_ps1connect.Name = "btn_ps1connect";
-            this.btn_ps1connect.Size = new System.Drawing.Size(180, 22);
+            this.btn_ps1connect.Size = new System.Drawing.Size(93, 22);
             this.btn_ps1connect.Text = "PS1";
             this.btn_ps1connect.Click += new System.EventHandler(this.btn_ps1connect_Click);
             // 
             // btn_ps2connect
             // 
             this.btn_ps2connect.Name = "btn_ps2connect";
-            this.btn_ps2connect.Size = new System.Drawing.Size(180, 22);
+            this.btn_ps2connect.Size = new System.Drawing.Size(93, 22);
             this.btn_ps2connect.Text = "PS2";
             this.btn_ps2connect.Click += new System.EventHandler(this.btn_ps2connect_Click);
             // 
@@ -169,10 +169,10 @@
             // 
             // btn_help
             // 
-            this.btn_help.Enabled = false;
             this.btn_help.Name = "btn_help";
             this.btn_help.Size = new System.Drawing.Size(180, 22);
             this.btn_help.Text = "Help";
+            this.btn_help.Click += new System.EventHandler(this.btn_help_Click);
             // 
             // statusStrip1
             // 

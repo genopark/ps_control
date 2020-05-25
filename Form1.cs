@@ -149,5 +149,18 @@ namespace ps_control
             int position = ((TextBox)this.ActiveControl).SelectionStart;
             this.ActiveControl.Text = this.ActiveControl.Text.Insert(position, Clipboard.GetText());
         }
+
+        private void btn_help_Click(object sender, EventArgs e)
+        {
+            //Open Help Form
+            ps_control.about_form f2 = new ps_control.about_form();
+            System.Windows.Forms.RichTextBox HelpTB = (System.Windows.Forms.RichTextBox)f2.Controls["HelpTextBox"];
+            // Help Button
+            HelpTB.AppendText("Built by Eugene Park"); HelpTB.AppendText(Environment.NewLine); HelpTB.ScrollToCaret();
+            HelpTB.AppendText("Contact: genopark@gmail.com"); HelpTB.AppendText(Environment.NewLine); HelpTB.ScrollToCaret();
+            HelpTB.AppendText("Control power supplies by entering correct ip and port numbers"); HelpTB.AppendText(Environment.NewLine); HelpTB.ScrollToCaret();
+            HelpTB.AppendText("A work in progress. May need fine tuning to function properly."); HelpTB.AppendText(Environment.NewLine); HelpTB.ScrollToCaret();
+            f2.ShowDialog();
+        }
     }
 }
